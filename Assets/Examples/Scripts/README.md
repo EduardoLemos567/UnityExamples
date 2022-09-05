@@ -1,0 +1,1 @@
+Some script examples collected from multiple projects.

@@ -1,0 +1,13 @@
+RWTexture2D<float> resultTexture;
+float2 textureSize;
+
+#include "Utils.hlsl"
+#include "Layers/Noise/Noise.hlsl"
+#include "Layers/Remap/Remap.hlsl"
+#include "Layers/Erosion/Erosion.hlsl"
+#include "Layers/Terrace/Terrace.hlsl"
+
+#pragma kernel NoiseKernel
+#pragma kernel RemapKernel
+#pragma kernel ErosionKernel
+#pragma kernel TerraceKernel
