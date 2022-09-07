@@ -1,4 +1,4 @@
-# UnityExamples
+# UnityExamples (using Unity 2022.1.15f1)
 
 ## Water example:
 A good looking water effect (not finished) applied on a simple quad.
