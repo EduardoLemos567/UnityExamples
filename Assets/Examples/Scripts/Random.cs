@@ -13,17 +13,17 @@ namespace Game
     /// </summary>
     public class Random
     {
-        static Random m_globalState = new();
+        static Random _globalState = new();
         public static Random globalState
         {
             get
             {
-                return m_globalState;
+                return _globalState;
             }
             set
             {
-                if (!(value is null))
-                    m_globalState = value;
+                if (value != null)
+                { _globalState = value; }
             }
         }
         System.Random state;
@@ -56,7 +56,7 @@ namespace Game
         }
         public double GetValueInRange(double max_value)
         {   // return value between min_value <= value < max_value
-            return (max_value) * state.NextDouble();
+            return max_value * state.NextDouble();
         }
         public int GetValueInRange(int max_value)
         {   // return value between min_value <= value < max_value
@@ -148,12 +148,6 @@ namespace Game
             if (values.Length > 0)
                 return (T)values.GetValue(state.Next(exclude_zero ? 1 : 0, values.Length));
             return (T)values.GetValue(0);
-        }
-        public T Pick<T>(T[] array)
-        {
-            if (array.Length > 0)
-                return array[state.Next(array.Length)];
-            return default(T);
         }
     }
 }

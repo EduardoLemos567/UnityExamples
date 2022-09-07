@@ -31,13 +31,13 @@ namespace Game
         {
             get
             {
-                if (shared == null)
-                { shared = new(); }
-                return shared;
+                if (_shared == null)
+                { _shared = new(); }
+                return _shared;
             }
         }
-        public static bool HasShared => shared != null;
-        static ArrayCache<T> shared;
+        public static bool HasShared => _shared != null;
+        static ArrayCache<T> _shared;
         public int maxCachedArrays = 0; // 0 = unlimited
         public int maxCachedArrayPerLength = 0; // 0 = unlimited
         readonly SortedDictionary<int, List<(T[] array, float time)>> cacheSortedDictionary = new();

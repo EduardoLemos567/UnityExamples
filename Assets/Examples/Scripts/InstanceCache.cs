@@ -18,12 +18,12 @@ namespace Game
         {
             get
             {
-                if (shared == null)
-                { shared = new(); }
-                return shared;
+                if (_shared == null)
+                { _shared = new(); }
+                return _shared;
             }
         }
-        static InstanceCache<T> shared;
+        static InstanceCache<T> _shared;
         public int maxCachedInstances = 0; // 0 = unlimited
         readonly List<(T instance, float time)> cacheList = new();
         public Returnable RentReturnable() => new(Rent());
